@@ -1,14 +1,11 @@
 <?php
 
-namespace OK\Ipstack;
+namespace AB\Iploka;
 
-use OK\Ipstack\Exceptions\InvalidApiException;
-use OK\Ipstack\Entity\Location;
-use OK\Ipstack\Entity\ParameterBag;
+use AB\Iploka\Exceptions\InvalidApiException;
+use AB\Iploka\Entity\ParameterBag;
+use AB\Iploka\Entity\Location;
 
-/** 
- * @author Oleg Kochetkov <oleg.kochetkov999@yandex.ru>
- */
 class Client
 {
     const URL = 'api.iploka.com';
@@ -33,7 +30,7 @@ class Client
     }
 
     /**
-     * Get data by ip from api ipstack
+     * Get data by ip from api iploka
      *
      * @param string $ip
      * @param bool $isArray
@@ -52,38 +49,13 @@ class Client
         return $isArray ? $result : $this->createLocation($result);
     }
     
-    /**
-     * Get data by array ip's from api ipstack
-     *
-     * @param array $ips
-     * @param bool $isArray
-     *
-     * @return mixed
-     * @throws InvalidApiException
-     */
-    public function getBulk(array $ips, $isArray = false)
-    {
-        $result = $this->request($this->getUrl(implode(',', $ips)));
-                    
-        if ($result['error']) {
-            throw new InvalidApiException("[{$result['error']['code']}][{$result['error']['type']}}] {$result['error']['info']}}");
-        }
-
-        if (!$isArray) {
-            foreach ($result as $key => $locationData) {
-                $result[$key] = $this->createLocation($locationData);
-            }
-        }
-
-        return $result;
-    }
     
     /**
      * @param string $url
      * 
      * @return array
      */
-    private function request(string $url): array
+    private function request(string $url) 
     {
         $c = curl_init($url);
         curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
@@ -104,16 +76,33 @@ class Client
      * @param string $ip
      * @return string
      */
-    public function getUrl(string $ip): string
+    public function getUrl(string $ip)
     {
         return sprintf(
             '%s://%s/%s?api_key=%s',
-            $this->params->getProtocol(),
+            'https',
             self::URL,
             $ip,
             $this->params->getKey()
         );
         
+    }
+    
+    /**
+     * @return ParameterBag
+     */
+    public function getParams(): ParameterBag
+    {
+        return $this->params;
+    }
+    
+    /**
+     * @param ParameterBag
+     * @return void
+     */
+    public function setParams(ParameterBag $params): void
+    {
+        $this->params = $params;
     }
     
     /**
@@ -141,22 +130,5 @@ class Client
                 ->setValid((isset($data['type']) && $data['type'] !== null));
         
         return $location;
-    }
-    
-    /**
-     * @return ParameterBag
-     */
-    public function getParams(): ParameterBag
-    {
-        return $this->params;
-    }
-    
-    /**
-     * @param ParameterBag
-     * @return void
-     */
-    public function setParams(ParameterBag $params): void
-    {
-        $this->params = $params;
     }
 }

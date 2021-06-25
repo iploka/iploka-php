@@ -1,0 +1,22 @@
+{
+    "name": "ab/iploka",
+    "type": "library",
+    "description": "A PHP wrapper using Iploka API",
+    "keywords": ["api", "ip", "iploka", "geocode", "php"],
+    "homepage": "https://github.com/GitHubHubus/ipstack-client",
+    "authors": [
+        {
+            "name": "Allen",
+            "email": "allen@howuku.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "AB\\Iploka\\": "src/"
+        }
+    }
+    
+}

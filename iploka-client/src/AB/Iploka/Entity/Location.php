@@ -1,10 +1,8 @@
 <?php
 
-namespace OK\Ipstack\Entity;
+namespace AB\Iploka\Entity;
 
-/**
- * @author Oleg Kochetkov <oleg.kochetkov999@yandex.ru>
- */
+
 class Location
 {
     /**
