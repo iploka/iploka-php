@@ -9,9 +9,7 @@
             "email": "allen@howuku.com"
         }
     ],
-    "require": {
-        "php": ">=7.0"
-    },
+    "require": {},
     "autoload": {
         "psr-0": {
             "AB\\Iploka\\": "src/"
