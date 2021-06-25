@@ -1,5 +1,5 @@
 {
-    "name": "xyz/iploka",
+    "name": "abab/iploka",
     "type": "library",
     "authors": [
         {
@@ -11,8 +11,9 @@
     "require": {
         "php": ">=7.0"
     },
+    
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "AB\\Iploka\\": "src/"
         }
     }
