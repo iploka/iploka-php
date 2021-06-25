@@ -3,12 +3,12 @@ A PHP wrapper for using Iploka [API](https://iploka.com/)
 
 #### Install via `composer`:
 ```sh
-composer require ab/iploka
+composer require iploka/iploka
 ```
 
 #### Basic usage
 
-Get full data as the [Location](https://github.com/GitHubHubus/ipstack-client/blob/master/src/OK/Ipstack/Entity/Location.php) object:
+Get full data as the [Location](https://github.com/iploka/iploka-php/blob/main/src/AB/Iploka/Entity/Location.php) object:
 ```php
 $client = new AB\Iploka\Client('api_key');
 $location = $client->get('134.201.250.155');
@@ -106,7 +106,7 @@ array(15) {
 ```
 
 #### Information
-Available [params](https://github.com/GitHubHubus/ipstack-client/blob/master/src/OK/Ipstack/Entity/ParameterBag.php) for getting custom result
+Available [params](https://github.com/iploka/iploka-php/blob/main/src/AB/Iploka/Entity/ParameterBag.php) for getting custom result
 
 As example
 ```php
