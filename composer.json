@@ -1,10 +1,10 @@
 {
-    "name": "abab/iploka",
+    "name": "xyz/iploka",
     "type": "library",
     "authors": [
         {
-            "name": "Allen",
-            "email": "allendbradley97@gmail.com"
+            "name": "allen",
+            "email": "allen@howuku.com"
         }
     ],
     "minimum-stability": "stable",
