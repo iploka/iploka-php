@@ -1,5 +1,5 @@
 {
-    "name": "ab/iploka",
+    "name": "abab/iploka",
     "type": "library",
     "description": "A PHP wrapper using Iploka API",
     "keywords": ["api", "ip", "iploka", "geocode", "php"],
