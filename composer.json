@@ -3,7 +3,7 @@
     "description": "geolocation using iploka",
     "type": "library",
     "autoload": {
-        "psr-4": {
+        "psr-0": {
             "AB\\Iploka\\": "src/"
         }
     },
