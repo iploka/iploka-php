@@ -74,7 +74,7 @@ class ParameterBag
     public function __construct($key = null)
     {
         $this->key = $key;
-        $this->protocol = self::PROTOCOL_HTTP;
+        $this->protocol = self::PROTOCOL_HTTPS;
         $this->fields = [];
         $this->format = self::FORMAT_JSON;
     }

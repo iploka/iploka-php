@@ -1,6 +1,8 @@
 {
-    "name": "abab/iploka",
+    "name": "iploka/iploka",
     "description": "geolocation using iploka",
+    "keywords": ["api", "client", "ip", "iploka", "geocode", "php"],
+    "homepage": "https://github.com/iploka/iploka-php",
     "type": "library",
     "autoload": {
         "psr-0": {

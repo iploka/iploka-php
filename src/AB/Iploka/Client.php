@@ -76,11 +76,11 @@ class Client
      * @param string $ip
      * @return string
      */
-    public function getUrl(string $ip)
+    public function getUrl(string $ip) : string
     {
         return sprintf(
             '%s://%s/%s?api_key=%s',
-            'https',
+            $this->params->getProtocol(),
             self::URL,
             $ip,
             $this->params->getKey()
