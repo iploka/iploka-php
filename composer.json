@@ -1,18 +1,12 @@
 {
     "name": "abab/iploka",
     "type": "library",
-    "description": "A PHP wrapper using Iploka API",
-    "keywords": ["api", "ip", "iploka", "geocode", "php"],
     "authors": [
         {
-            "name": "allen",
-            "email": "allen@howuku.com"
+            "name": "Allen",
+            "email": "allendbradley97@gmail.com"
         }
     ],
-    "require": {},
-    "autoload": {
-        "psr-0": {
-            "AB\\Iploka\\": "src/"
-        }
-    }
+    "minimum-stability": "stable",
+    "require": {}
 }
