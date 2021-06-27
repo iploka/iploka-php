@@ -1,14 +1,28 @@
 # iploka
-A PHP wrapper for using Iploka [API](https://iploka.com/)
+Get geolocation information from any IP addresses. Get free API Key from https://iploka.com for free-forever 10,000 monthly requests.
 
-#### Install via `composer`:
+`iploka` was developed by [Howuku](https://howuku.com). Howuku is an all-in-one CRO & analytics tool to help you optimize conversion rates and user experience.
+
+[![PHP Version](https://img.shields.io/packagist/v/iploka/iploka)](https://packagist.org/packages/iploka/iploka)[![PHP Download](https://img.shields.io/packagist/dm/iploka/iploka)](https://packagist.org/packages/iploka/iploka)
+
+## Features
+
+- Free up to 10,000 monthly request
+- Support both IPv4 and IPv6
+- Additional timezone, currency and connection information
+
+## Installation
+
+- Include package in your project
+
 ```sh
 composer require iploka/iploka
 ```
 
-#### Basic usage
+#### How to use
 
 Get full data as the [Location](https://github.com/iploka/iploka-php/blob/main/src/AB/Iploka/Entity/Location.php) object:
+
 ```php
 $client = new AB\Iploka\Client('api_key');
 $location = $client->get('134.201.250.155');
@@ -50,7 +64,7 @@ $client = new AB\Iploka\Client('api_key');
 $location = $client->get('134.201.250.155', true);
 var_dump($location);
 ```
-result:
+ And the complete response will be returned:
 ```php
 array(15) {
   ["ip"]=>
@@ -108,8 +122,11 @@ array(15) {
 #### Information
 Available [params](https://github.com/iploka/iploka-php/blob/main/src/AB/Iploka/Entity/ParameterBag.php) for getting custom result
 
-As example
+For example:
 ```php
 $client = new AB\Iploka\Client('api_key');
 $client->getParams()->addField("calling_code");
 ```
+### Support
+
+Email: hello@iploka.com
